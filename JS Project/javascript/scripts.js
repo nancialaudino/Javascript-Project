@@ -20,16 +20,79 @@ async function afficherBlagues() {
     }
   }
   
-  afficherBlagues();
   
 
+function afficherGallery (){
+  fetch('///home/user/Documents/Javascript-Project/JS%20Project/index.html#')
+  .then(response => response.text())
+  .then(htmlText => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
+    const images = doc.querySelectorAll('.row img');
+    
+    let imageGallery = document.querySelector(".imageGallery");
+    images.forEach(img => {
+      const newImg = document.createElement('img');
+      newImg.src = img.src;
+      imageGallery.appendChild(newImg);
+    });
+  });
+  
+  
+}
 
 
 
+
+
+
+
+
+
+
+//console.log(arrayImages);
 
 
 
 /*
+
+
+
+function afficherGallery (){
+  let imageGallery = document.querySelector(".imageGallery");
+  let images = document.querySelectorAll(".row img");
+  for (i=0; i<images.length;i++){
+    const new_image = document.createElement('img');
+    new_image.src=images[i].src
+    imageGallery.appendChild(new_image);
+
+    console.log(images)
+  }
+
+
+
+
+
+
+
+
+
+
+
+function afficherGallery (){
+  let images = document.querySelectorAll(".row img");
+  let arrayImages = [];
+  for (i=0; i<images.length;i++){
+    arrayImages.push(images[i].src);
+  }
+  
+//console.log(arrayImages);
+  
+}
+
+
+
+
 async function afficherFormation() {
 
 const blagues = document.querySelector("#blagues");
