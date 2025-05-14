@@ -101,7 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+const gallery = document.getElementById('gallery');
 
+const imageSrc = "images/Cursos-de-informatica.jpg"; // substitua com o caminho da sua imagem
+const totalImages = 12;
+
+for (let i = 1; i <= totalImages; i++) {
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+
+  item.innerHTML = `
+    <img src="${imageSrc}" alt="Formation ${i}">
+    <p>Formation ${i}</p>
+  `;
+
+  gallery.appendChild(item);
+}
 
 
 
