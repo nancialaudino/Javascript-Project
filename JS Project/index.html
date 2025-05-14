@@ -8,11 +8,14 @@
 </head>
 <body onload="afficherBlagues()">
     <div class="header">
-        <div class="feednavbar">
-            <a href="#">Contacts</a>
-            <a href="#">Jeux</a>
-            <a href="gallery.html">Gallery</a>
-        </div>
+        <div class="dropdown-menu-container">
+         <button id="dropdownToggle" class="dropdown-button">☰ Menu</button>
+            <div id="dropdownMenu" class="dropdown-content">
+              <a href="#">Contacts</a>
+              <a href="#">Jeux</a>
+              <a href="gallery.html">Gallery</a>
+            </div>
+          </div>
         <h1>Hello! Welcome to my first project in HTML + JS</h1> 
     </div>
     <main class="mainfeed">
@@ -39,6 +42,19 @@
             </div>
           </div>
     </main>
+<div class="add-formation-form">
+  <h3>Gérer les formations</h3>
+  <form id="formationForm">
+    <input type="text" id="title" placeholder="Titre de la formation" required>
+    <input type="text" id="description" placeholder="Description" required>
+    <input type="text" id="imageUrl" placeholder="URL de l'image" required>
+    
+    <div class="form-buttons">
+      <button type="submit" class="buttonFeed">Ajouter</button>
+      <button type="button" id="removeLastBtn" class="buttonFeed">Supprimer</button>
+    </div>
+  </form>
+</div>
     <div class="btnnFeed2"><button class="buttonFeed2" onclick="window.location.href='gallery.html'">S'abonner</button></div>
     <div id="dropdown">
       <form action="#" method="post">

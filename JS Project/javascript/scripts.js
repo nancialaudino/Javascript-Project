@@ -19,7 +19,9 @@ async function afficherBlagues() {
       }
     }
   }
-  
+
+
+
   
 
 function afficherGallery (){
@@ -43,6 +45,59 @@ function afficherGallery (){
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Formulário de adicionar formação
+  const form = document.getElementById('formationForm');
+  const row = document.querySelector('.row');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const imageUrl = document.getElementById('imageUrl').value;
+
+    const column = document.createElement('div');
+    column.className = 'column side';
+    column.innerHTML = `
+      <h2>${title}</h2>
+      <p>${description}</p>
+      <img class="photoMain" src="${imageUrl}" alt="${title}">
+      <div><a href="#" class="buttonFeed">Ajouter au panier</a></div>
+    `;
+
+    row.appendChild(column);
+    form.reset();
+  });
+
+  // Botão para remover a última formação
+  const removeLastBtn = document.getElementById('removeLastBtn');
+  removeLastBtn.addEventListener('click', () => {
+    const columns = row.querySelectorAll('.column');
+    if (columns.length > 0) {
+      const last = columns[columns.length - 1];
+      row.removeChild(last);
+    } else {
+      alert("Aucune formation à supprimer.");
+    }
+  });
+
+  // Dropdown menu (☰ Menu)
+  const toggleBtn = document.getElementById('dropdownToggle');
+  const menu = document.getElementById('dropdownMenu');
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que o clique feche o menu imediatamente
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Fechar dropdown ao clicar fora
+  window.addEventListener('click', (event) => {
+    if (!menu.contains(event.target)) {
+      menu.style.display = 'none';
+    }
+  });
+});
 
 
 
