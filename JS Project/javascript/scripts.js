@@ -46,7 +46,7 @@ function afficherGallery (){
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Formulário de adicionar formação
+  // Ajouter un formulaire de formation
   const form = document.getElementById('formationForm');
   const row = document.querySelector('.row');
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 
-  // Botão para remover a última formação
+  // Bouton pour supprimer la dernière formation
   const removeLastBtn = document.getElementById('removeLastBtn');
   removeLastBtn.addEventListener('click', () => {
     const columns = row.querySelectorAll('.column');
@@ -87,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('dropdownMenu');
 
   toggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que o clique feche o menu imediatamente
+    e.stopPropagation(); // Empêche le clic de fermer immédiatement le menu
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
   });
 
-  // Fechar dropdown ao clicar fora
+  // Fermer la liste déroulante en cliquant à l'extérieur
   window.addEventListener('click', (event) => {
     if (!menu.contains(event.target)) {
       menu.style.display = 'none';
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const gallery = document.getElementById('gallery');
 
-const imageSrc = "images/Cursos-de-informatica.jpg"; // substitua com o caminho da sua imagem
+const imageSrc = "images/Cursos-de-informatica.jpg";
 const totalImages = 12;
 
 for (let i = 1; i <= totalImages; i++) {
@@ -120,6 +120,23 @@ for (let i = 1; i <= totalImages; i++) {
 
 
 
+
+let count = 1;
+let radio = document.querySelector('.manual-btn');
+document.getElementById('radio1').checked = true;
+
+setInterval(() => {
+  prochaineImg()
+}, 5000)
+
+function prochaineImg(){
+  count++;
+  if(count>3){
+    count=1;
+  }
+  document.getElementById('radio'+count).checked = true;
+
+}
 //console.log(arrayImages);
 
 

@@ -7,15 +7,42 @@
   <link rel="stylesheet" href="assets/stylesheet.css">
 </head>
 <body>
-
+  
   <div class="header">
     <h1>Galerie de Formations</h1>
   </div>
-
+  
+  <section class="slider">
+    <div class="slider-content">
+      <input type="radio" name="btn-radio" id="radio1">
+      <input type="radio" name="btn-radio" id="radio2">
+      <input type="radio" name="btn-radio" id="radio3">
+      <div class="slide-box first">
+        <img class="img1" src="images/computer-science.jpg" alt="Formation 1">
+      </div>
+      <div class="slide-box">
+        <img class="img2"  src="images/IA.png" alt="Formation 2">    
+      </div>
+      <div class="slide-box">
+        <img class="img3"  src="images/Que-tipo-de-gamer-eres-Acer.jpg" alt="Formation 3">
+      </div>
+      <div class="nav-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+      </div>
+      <div class="nav-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+      </div>
+    </div>
+  </section> 
+  
   <div class="gallery-container" id="gallery">
     <!-- As imagens serão adicionadas aqui pelo JavaScript -->
   </div>
-<script src="javascript/scripts.js"></script>
+  <script src="javascript/scripts.js"></script>
 </body>
 </html>
 
@@ -27,29 +54,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Page</title>
-    <link rel="stylesheet" href="assets/stylesheet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Page</title>
+  <link rel="stylesheet" href="assets/stylesheet.css">
 </head>
 <body onload="afficherGallery(); ">
-    <div class="header">
-        <div class="feednavbar">
-            <a href="#">Contacts</a>
-            <a href="#">Jeux</a>
-            <a href="#">Accueil</a>
-        </div>
-        <h1>Hello! Welcome to the gallery page</h1> 
+  <div class="header">
+    <div class="feednavbar">
+      <a href="#">Contacts</a>
+      <a href="#">Jeux</a>
+      <a href="#">Accueil</a>
     </div>
-    <div class="imageGallery">
-    </div>
-    
- <footer>
+    <h1>Hello! Welcome to the gallery page</h1> 
+  </div>
+  <div class="imageGallery">
+  </div>
+  
+  <footer>
     <div class="footerfeed">
-        <p>Footer</p>
+      <p>Footer</p>
     </div>
- </footer>   
- <script src="javascript/scripts.js"></script>
+  </footer>   
+  <script src="javascript/scripts.js"></script>
 </body>
 </html>
 -->
